@@ -76,24 +76,12 @@ bot.on("message", msg => {
   }
 });
 
-bot.on("message", message => {
-    if(message.content === "/purge") {
-        let messagecount = parseInt(args[1]) || 1;
-
-        var deletedMessages = -1;
-
-        message.channel.fetchMessages({limit: Math.min(messagecount + 1, 100)}).then(messages => {
-            messages.forEach(m => {
-                if (m.author.id == bot.user.id) {
-                    m.delete().catch(console.error);
-                    deletedMessages++;
-                }
-            });
-        }).then(() => {
-                if (deletedMessages === -1) deletedMessages = 0;
-                message.channel.send(`:white_check_mark: Purged \`${deletedMessages}\` messages.`)
-                    .then(m => m.delete(2000));
-        }).catch(console.error);
+bot.on("message, message => {
+ if (message.content == "/say") { // creates command say
+        if (!message.member.roles.some(r=>["TheVoid admin"].includes(r.name)) ) return message.reply(":x: Désolé mais tu n'as pas la permission de faire cela : tu as besoin du grade : **TheVoid admin**");
+        var sayMessage = message.content.substring(4)
+        message.delete().catch(O_o=>{});
+        message.channel.send(sayMessage);
     }
 });
 	  
