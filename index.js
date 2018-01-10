@@ -1,7 +1,6 @@
 var Discord = require("discord.js");
 var bot = new Discord.Client();
 var prefix = "/"
-const opusscript = require("opusscript");
 const fs = require("fs")
 
 bot.on("ready", function () {
@@ -26,29 +25,6 @@ bot.on('message', msg => {
         }});
 }
 })
-
-let points = JSON.parse(fs.readFileSync('./points.json', 'utf8'));
-
-bot.on("message", message => {
-if(message.content.startsWith("prefix")) return;
-if(message.author.bot) return;
-if(!points[message.author.id]) points[message.author.id] = {points: 0, level: 0};
-let userData = points[message.author.id];
-userData.points++;
-let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
-if(curLevel > userData.level) {
-// Level up!
-userData.level = curLevel;
-message.reply(`Vous êtes désormais au niveau **${curLevel}**!`);
-}
-if(message.content.startsWith("/level")) {
-message.reply(`Voici vos statistiques : Niveau - ${userData.level}, Points - ${userData.points}`);
-}
-fs.writeFile('./points.json', JSON.stringify(points), (err) => {if(err) console.error(err)});
-});
-
-
-
 
 
 
