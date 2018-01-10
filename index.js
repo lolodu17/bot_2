@@ -89,8 +89,13 @@ message.channel.send(":wave: | Bonjour, " + message.author.username, {
 })
 });
 
-
-bot.user.setGame('Besoin d'aide ? - /help', 'https://www.twitch.tv/beedywoolmako'));
+bot.on("message", msg => {
+  if (msg.content.startsWith('/status')) {
+    if (msg.author.id !== "316993284566417418") {
+      return msg.channel.sendMessage(":x: Vous n'avez pas l'autorisation de faire cette commande :x:")
+    }
+    bot.user.setStatus(dnd)
+  }
 });
 
 bot.login(process.env.TOKEN)
