@@ -76,7 +76,7 @@ bot.on("message", msg => {
   }
 });
 
-bot.on("message", msg => {
+bot.on("message", message => {
     if(message.content === "/purge") {
         let messagecount = parseInt(args[1]) || 1;
 
