@@ -104,6 +104,21 @@ bot.on("message", message => {
         };
 });
 
+bot.on("message", message => {
+    if (message.content === "/stats") {
+            const embed = new Discord.RichEmbed()
+                .setDescription("t")
+                .setColor(0x6495ED)
+                .addField("Utilisateurs:" + bot.users.length)
+	        .addField("Serveurs:" + bot.servers.length)
+		.addField("Salons:" + bot.channels.length)
+	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
+	    	
+
+            message.channel.send({embed})
+
+        };
+});
 
 
 
