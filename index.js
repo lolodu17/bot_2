@@ -35,7 +35,7 @@ bot.on('message', message => {
 bot.on("message", msg => {
   if (msg.content.startsWith('/game')) {
     if (msg.author.id !== "316993284566417418") {
-      return msg.channel.sendMessage(":x: Vous n'avez pas l'autorisation de faire cette commande :x:")
+      return msg.channel.sendMessage("Vous n'avez pas l'autorisation de faire cette commande :x:")
     }
     bot.user.setGame("Besoin d'aide ? - /help", "https://www.twitch.tv/beedywoolmako")
   }
@@ -70,7 +70,7 @@ message.channel.send(":wave: | Bonjour, " + message.author.username, {
 bot.on("message", msg => {
   if (msg.content.startsWith('/status')) {
     if (msg.author.id !== "316993284566417418") {
-      return msg.channel.sendMessage(":x: Vous n'avez pas l'autorisation de faire cette commande :x:")
+      return msg.channel.sendMessage("Vous n'avez pas l'autorisation de faire cette commande :x:")
     }
     bot.user.setStatus("dnd")
   }
@@ -78,7 +78,7 @@ bot.on("message", msg => {
 
 bot.on("message", message => {
  if (message.content == "/say") {
-        if (!message.member.roles.some(r=>["TheVoid admin"].includes(r.name)) ) return message.reply(":x: Désolé mais tu n'as pas la permission de faire cela : tu as besoin du grade : **TheVoid admin**");
+        if (!message.member.roles.some(r=>["TheVoid admin"].includes(r.name)) ) return message.reply("Désolé mais tu n'as pas la permission de faire cela : tu as besoin du grade : **TheVoid admin** :x:");
         var sayMessage = message.content.substring(4)
         message.delete().catch(O_o=>{});
         message.channel.send(sayMessage);
