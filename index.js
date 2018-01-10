@@ -105,6 +105,28 @@ bot.on("message", message => {
         };
 });
 
+let points = JSON.parse(fs.readFileSync('./points.json', 'utf8'));
+
+bot.on("message", message => {
+if(message.content.startsWith("prefix")) return;
+if(message.author.bot) return;
+if(!points[message.author.id]) points[message.author.id] = {points: 0, level: 0};
+let userData = points[message.author.id];
+userData.points++;
+let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
+if(curLevel > userData.level) {
+userData.level = curLevel;
+message.reply(`Vous êtes désormais au niveau **${curLevel}**!`);
+}
+if(message.content.startsWith("/level")) {
+message.reply(`Voici vos statistiques : Niveau - ${userData.level}, Points - ${userData.points}`);
+}
+fs.writeFile('./points.json', JSON.stringify(points), (err) => {if(err) console.error(err)});
+});
+
+
+
+
 bot.on('guildMemberAdd', member => {
   member.createDM().then(channel => {
     return channel.send(":wave: | Je te souhaite la bienvenue sur ce serveur ! Si tu as des questions sur moi utilise la commande : **/help**, tu peux aussi rejoindre mon serveur :Discord: avec la commande **/invite** pour plus dinformations, " + member.displayName)
