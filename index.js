@@ -92,7 +92,7 @@ message.channel.send(":wave: | Bonjour, " + message.author.username, {
 bot.on('message', message => {
    if (message.content === "!avatar") {
 
-bot.user.setAvatar("./avatar.jpg")
+bot.user.setAvatar("./avatar.png")
 var commande = [`woomy, je vais de changer d'avatar, patienter quelque minute ${message.author}`,`squidy, changement d'avatar, patienter quelque minute ${message.author}`,`nyges, je vais changer d'avatar, patienter ${message.author}`];
      message.channel.send(`${(commande[Math.floor(Math.random() * commande.length)])}`)
 }
