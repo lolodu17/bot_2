@@ -97,8 +97,9 @@ bot.on("message", message => {
             message.channel.send({embed})
 
         });
+});
 
-    });
+
 
 
 bot.login(process.env.TOKEN)
