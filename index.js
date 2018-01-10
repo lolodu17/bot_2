@@ -96,6 +96,7 @@ bot.on("message", message => {
 		.addField("/pp","Vous donne votre photo de profil.")
 	    	.addField("/stats","Donne les statistiques du bot.")
 	    	.addField("/si","Vous montre les informations du serveur.")
+	    	.addField("Bienvenue","Elle est automatique et envoie un message de bienvenue en messages privés au nouvel arrivant.")
 	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
 	    	
 
@@ -103,5 +104,11 @@ bot.on("message", message => {
 
         };
 });
+
+bot.on('guildMemberAdd', member => {
+  member.createDM().then(channel => {
+    return channel.send(":wave: | Je te souhaite la bienvenue sur ce serveur ! Si tu as des questions sur moi utilise la commande : **/help**, tu peux aussi rejoindre mon serveur :Discord: avec la commande **/invite** pour plus dinformations, " + member.displayName)
+  }).catch(console.error)
+})
 
 bot.login(process.env.TOKEN)
