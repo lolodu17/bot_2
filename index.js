@@ -11,7 +11,7 @@ bot.on("ready", function () {
 bot.on('message', msg => {
   if (msg.content.startsWith('/invite')) {
         msg.channel.send({embed: {
-            color: 0Xff0000,
+            color: 0x98FB98,
             author: {
                 name: "Vous souhaitez m'inviter sur votre serveur ?",
                 description: "Vous trouverez le lien ci-dessous",
