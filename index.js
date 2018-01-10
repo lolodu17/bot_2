@@ -88,7 +88,7 @@ bot.on("message", message => {
 bot.on("message", message => {
     if (message.content === "/help") {
             const embed = new Discord.RichEmbed()
-                .setDescription("**Liste des commandes de TheVoid!")
+                .setDescription("**Liste des commandes de TheVoid!**")
                 .setColor(0xFA8072)
                 .addField("/invite","Vous donne le lien pour m'inviter sur votre serveur.")
 
