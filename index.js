@@ -104,16 +104,4 @@ bot.on("message", message => {
         };
 });
 
-bot.on('message', message => {
-   if (message.content.startsWith("/stats")) {
-     message.channel.send("**Utilisateurs: **" + bot.users.length)
-}
-})
-
-bot.on('message', message => {
-   if (message.content.startsWith("/stats")) {
-     message.channel.send("**Serveurs: **" + bot.servers.length)
-}
-})
-
 bot.login(process.env.TOKEN)
