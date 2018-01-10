@@ -90,7 +90,7 @@ message.channel.send(":wave: | Bonjour, " + message.author.username, {
 });
 
 
-bot.user.setGame('Besoin d'aide ? - /help', 'https://www.twitch.tv/beedywoolmako');
+bot.user.setGame('Besoin d'aide ? - /help', 'https://www.twitch.tv/beedywoolmako'));
 });
 
 bot.login(process.env.TOKEN)
