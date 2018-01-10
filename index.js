@@ -7,7 +7,6 @@ bot.on("ready", function () {
 	console.log("Bot connecté");
 });
 
-bot.login("process.env.TOKEN")
 
 bot.on('message', msg => {
   if (msg.content.startsWith('/invite')) {
@@ -89,3 +88,6 @@ message.channel.send(":wave: | Bonjour, " + message.author.username, {
  tts: true
 })
 });
+
+
+bot.login(process.env.TOKEN)
