@@ -94,7 +94,7 @@ bot.on("message", msg => {
     if (msg.author.id !== "316993284566417418") {
       return msg.channel.sendMessage(":x: Vous n'avez pas l'autorisation de faire cette commande :x:")
     }
-    bot.user.setStatus(dnd)
+    bot.user.setStatus("dnd")
   }
 });
 
