@@ -91,9 +91,9 @@ bot.on("message", message => {
                 .setDescription(":question: | **Liste des commandes de TheVoid!**")
                 .setColor(0xFA8072)
                 .addField("/invite","Vous donne le lien pour m'inviter sur votre serveur.")
-	        .addField("/roll","Vous donne un nombre aléatoire en 1 et 10."
-		.addField("/8ball","Répond aléatoirement a une question."
-		.addField("/pp","Vous donne votre photo de profil."
+	        .addField("/roll","Vous donne un nombre aléatoire en 1 et 10.")
+		.addField("/8ball","Répond aléatoirement a une question.")
+		.addField("/pp","Vous donne votre photo de profil.")
 	    	
 
             message.channel.send({embed})
