@@ -18,7 +18,7 @@ bot.on('message', msg => {
             },
             fields: [{
                     name: 'Lien :',
-                    value: "https://discordapp.com/oauth2/authorize?client_id=371276679710244864&scope=bot&permissions=2146958591",
+                    value: "https://discordapp.com/oauth2/authorize?client_id=400376181876195329&scope=bot&permissions=2146958591",
                 },
             ],
         }});
@@ -89,5 +89,13 @@ message.channel.send(":wave: | Bonjour, " + message.author.username, {
 })
 });
 
+bot.on('message', message => {
+   if (message.content === "!avatar") {
+
+bot.user.setAvatar("./avatar.jpg")
+var commande = [`woomy, je vais de changer d'avatar, patienter quelque minute ${message.author}`,`squidy, changement d'avatar, patienter quelque minute ${message.author}`,`nyges, je vais changer d'avatar, patienter ${message.author}`];
+     message.channel.send(`${(commande[Math.floor(Math.random() * commande.length)])}`)
+}
+})
 
 bot.login(process.env.TOKEN)
