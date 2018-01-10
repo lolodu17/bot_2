@@ -27,7 +27,7 @@ bot.on('message', msg => {
 
 bot.on('message', message => {
   if (message.content === '/pp') {
-    message.reply("message.author.avatarURL);
+    message.reply(message.author.avatarURL);
   }
 });
 
