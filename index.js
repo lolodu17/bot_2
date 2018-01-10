@@ -96,4 +96,12 @@ bot.on("message", msg => {
   }
 });
 
+bot.on('message',message => {
+	if (message.content === "/stats")
+message.channel.sendMessage("**Stats du bot**\n\n" +
+			    "**Utilisateurs:**" + bot.users.length +
+			    "\n**Serveurs:**" + bot.servers.length + 
+			    "\n**Salons:**" + bot.channels.length +
+});
+
 bot.login(process.env.TOKEN)
