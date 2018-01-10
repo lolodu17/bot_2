@@ -96,7 +96,7 @@ bot.on("message", message => {
 		.addField("/pp","Vous donne votre photo de profil.")
 	    	.addField("/stats","Donne les statistiques du bot.")
 	    	.addField("/si","Vous montre les informations du serveur.")
-	    	.setFooter("**TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.**")
+	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
 	    	
 
             message.channel.send({embed})
