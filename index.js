@@ -94,7 +94,7 @@ bot.on("message", message => {
 	        .addField("/roll","Vous donne un nombre aléatoire en 1 et 10."
 		.addField("/8ball","Répond aléatoirement a une question."
 		.addField("/pp","Vous donne votre photo de profil."
-		.addFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku."))
+		.addFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")))
 	    	
 
 
