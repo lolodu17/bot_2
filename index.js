@@ -76,14 +76,6 @@ bot.on("message", msg => {
   }
 });
 
-bot.on("message", message => {
- if (message.content == "/say") {
-        if (!message.member.roles.some(r=>["TheVoid admin"].includes(r.name)) ) return message.reply("Désolé mais tu n'as pas la permission de faire cela : tu as besoin du grade : **TheVoid admin** :x:");
-        var sayMessage = message.content.substring(4)
-        message.delete().catch(O_o=>{});
-        message.channel.send(sayMessage);
-    }
-});
 	  
 bot.on("message", message => {
     if (message.content === "/help") {
@@ -97,6 +89,7 @@ bot.on("message", message => {
 	    	.addField("/stats","Donne les statistiques du bot.")
 	    	.addField("/si","Vous montre les informations du serveur.")
 	    	.addField("Bienvenue","Elle est automatique et envoie un message de bienvenue en messages privés au nouvel arrivant.")
+	    	.addField("Niveaux","Vous donne des points quand vous parlez obtiendrez vous le meilleur niveau ? Regardez vos statistiques avec /level.")
 	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
 	    	
 
