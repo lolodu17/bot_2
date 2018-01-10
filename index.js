@@ -76,8 +76,8 @@ bot.on("message", msg => {
   }
 });
 
-bot.on("message, message => {
- if (message.content == "/say") { // creates command say
+bot.on("message", message => {
+ if (message.content == "/say") {
         if (!message.member.roles.some(r=>["TheVoid admin"].includes(r.name)) ) return message.reply(":x: Désolé mais tu n'as pas la permission de faire cela : tu as besoin du grade : **TheVoid admin**");
         var sayMessage = message.content.substring(4)
         message.delete().catch(O_o=>{});
