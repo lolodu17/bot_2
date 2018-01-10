@@ -57,9 +57,7 @@ bot.on("message", msg => {
     if (msg.author.id !== "316993284566417418") {
       return msg.channel.sendMessage(":x: Vous n'avez pas l'autorisation de faire cette commande :x:")
     }
-    let args = msg.content.split(" ").slice(1);
-    var gammme = args.join(" ")
-    bot.user.setGame(gammme)
+    bot.user.setGame("Besoin d'aide ? - /help", "https://www.twitch.tv/beedywoolmako")
   }
 });
 
