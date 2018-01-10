@@ -54,7 +54,7 @@ bot.on('message', msg => {
 
 bot.on("message", msg => {
   if (msg.content.startsWith('/game')) {
-    if (msg.author.id !== "296636852906098698") {
+    if (msg.author.id !== "316993284566417418") {
       return msg.channel.sendMessage(":x: Vous n'avez pas l'autorisation de faire cette commande :x:")
     }
     let args = msg.content.split(" ").slice(1);
