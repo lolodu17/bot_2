@@ -25,30 +25,10 @@ bot.on('message', msg => {
 }
 })
 
-
-
-bot.on('message', msg => {
-  if (msg.content.startsWith('/help')) {
-        msg.channel.send({embed: {
-            color: 0Xff0000,
-            author: {
-                name: "Commandes :",
-            },
-            fields: [{
-                    name: '**_-Fun-_**',
-                    value: "/musique liste , /roll , /8ball , /salut , /level , /money",
-                },
-                {
-                    name: '**_-Modération-_**',
-                    value: "/pay , /clean , /clear",
-                },
-                {
-                    name: '**indéfini**',
-                    value: "indéfini",
-                },
-            ],
-        }});
-}
+bot.on('message', message => {
+  if (message.content === '/pp') {
+    message.reply("message.author.avatarURL);
+  }
 });
 
 
