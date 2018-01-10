@@ -1,7 +1,7 @@
 var Discord = require("discord.js");
 var bot = new Discord.Client();
 var prefix = "/"
-require("opusscript");
+const opusscript = require("opusscript");
 const fs = require("fs")
 
 bot.on("ready", function () {
