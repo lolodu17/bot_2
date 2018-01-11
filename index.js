@@ -98,6 +98,7 @@ bot.on("message", message => {
 	    	.addField("/stats : PANNE","Donne les statistiques du bot.")
 	    	.addField("/si : PANNE","Vous montre les informations du serveur.")
 	    	.addField("Bienvenue","Elle est automatique et envoie un message de bienvenue en messages privés au nouvel arrivant.")
+	    	.addField("Musiques","Fonctionne par mix de 20mn. /radio 1,2,3,4... Il y aura 10 mixs.")
 	    	.addField("Niveaux","Vous donne des points quand vous parlez obtiendrez vous le meilleur niveau ? Regardez vos statistiques avec /level.")
 	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
 	    	
@@ -136,7 +137,7 @@ let voiceChannel = message.guild.channels
 voiceChannel
 .join()
 .then(function (connection) {
-  connection.playFile('./radioh.mp3')
+  connection.playFile('./radio.mp3')
     message.channel.sendMessage(":musical_note: | La radio est lancée sur la piste 1 !")
 });
 };
