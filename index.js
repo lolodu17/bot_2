@@ -95,6 +95,7 @@ bot.on("message", message => {
 		.addField("/8ball","Répond aléatoirement a une question.")
 		.addField("/pp","Vous donne votre photo de profil.")
 	    	.addField("/piece","Lance la pièce : pile ou face ?")
+	    	.addField("/cat","Vous montre une image de chat.")
 	    	.addField("/stats : PANNE","Donne les statistiques du bot.")
 	    	.addField("/si : PANNE","Vous montre les informations du serveur.")
 	    	.addField("Bienvenue","Elle est automatique et envoie un message de bienvenue en messages privés au nouvel arrivant.")
@@ -159,6 +160,12 @@ voiceChannel
 };
 });
 
+bot.on('message', message => {
+   if (message.content.startsWith("/roll")) {
+var commande = [":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100526168702986/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100526168702986/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100321893646341/assurance-chat-assurer-son-chat1.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100866398191617/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100934425346048/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401101097650880515/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401101105687298058/jtmbb.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401101302081519626/chats.jpg"]
+     message.channel.send(`${(commande[Math.floor(Math.random() * commande.length)])}`),"
+}
+});
 
 
 bot.on('guildMemberAdd', member => {
