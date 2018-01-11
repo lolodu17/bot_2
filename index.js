@@ -135,7 +135,7 @@ bot.on('message', message => {
    if (message.content.startsWith("/cat")) {
 var commande = [":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100526168702986/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100526168702986/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100321893646341/assurance-chat-assurer-son-chat1.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100866398191617/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401100934425346048/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401101097650880515/download.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401101105687298058/jtmbb.jpg",":cat: | https://cdn.discordapp.com/attachments/399650717230432288/401101302081519626/chats.jpg"]
      message.channel.send(`${(commande[Math.floor(Math.random() * commande.length)])}`),
-	     "}
+}
 });
 
 
