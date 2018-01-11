@@ -126,7 +126,21 @@ message.reply(`Voici vos statistiques : Niveau - ${userData.level}, Points - ${u
 fs.writeFile('./points.json', JSON.stringify(points), (err) => {if(err) console.error(err)});
 });
 
+bot.on('message',message => {
+if (message.content === "/radio 1") {
 
+
+let voiceChannel = message.guild.channels
+.filter(function (channel) { return channel.type === 'voice' })
+.first()
+voiceChannel
+.join()
+.then(function (connection) {
+  connection.playFile('./radioh.mp3')
+    message.channel.sendMessage(":musical_note: | La radio est lancée sur la piste 1 !")
+});
+};
+});
 
 
 bot.on('guildMemberAdd', member => {
