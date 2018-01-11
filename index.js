@@ -143,6 +143,23 @@ voiceChannel
 };
 });
 
+bot.on('message',message => {
+if (message.content === "/radio 2") {
+
+
+let voiceChannel = message.guild.channels
+.filter(function (channel) { return channel.type === 'voice' })
+.first()
+voiceChannel
+.join()
+.then(function (connection) {
+  connection.playFile('./radioo.mp3')
+    message.channel.sendMessage(":musical_note: | La radio est lancée sur la piste 2 !")
+});
+};
+});
+
+
 
 bot.on('guildMemberAdd', member => {
   member.createDM().then(channel => {
