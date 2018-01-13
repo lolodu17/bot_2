@@ -162,14 +162,29 @@ voiceChannel
 
 bot.on('message',message => {
 	if (message.content === "/bvn")
-message.channel.send(":tada: | " + message.author.username + " vous souhaite la bienvenue !")
+message.channel.send(":tada: | **" + message.author.username + "** vous souhaite la bienvenue !")
 });
 
 
 bot.on('guildMemberAdd', member => {
   member.createDM().then(channel => {
-    return channel.send(":wave: | Je te souhaite la bienvenue sur ce serveur ! Si tu as des questions sur moi utilise la commande : **/help**, tu peux aussi rejoindre mon serveur :Discord: avec la commande **/invite** pour plus dinformations, " + member.displayName)
+    return channel.send(":wave: | Je te souhaite la bienvenue sur ce serveur ! Si tu as des questions sur moi utilise la commande : **/help**, tu peux aussi m'ajouter sur ton serveur discord avec la commande **/invite**, " + member.displayName)
   }).catch(console.error)
 })
+
+bot.on('message', message => {
+   if (message.content.startsWith("/say ")) {
+      message.delete(1000);
+      message.channel.send(message.content.slice(5, message.content.length));
+   }
+});
+
+bot.on('message', message => {
+   if (message.content.startsWith("/bvn")) {
+      message.delete(1000);
+      message.channel.send(":tada: | **" + message.author.username + "** vous souhaite la bienvenue !");
+   }
+});
+
 
 bot.login(process.env.TOKEN)
