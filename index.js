@@ -160,11 +160,6 @@ voiceChannel
 };
 });
 
-bot.on('message',message => {
-	if (message.content === "/bvn")
-message.channel.send(":tada: | **" + message.author.username + "** vous souhaite la bienvenue !")
-});
-
 
 bot.on('guildMemberAdd', member => {
   member.createDM().then(channel => {
