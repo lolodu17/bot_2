@@ -68,13 +68,6 @@ var commande = [":control_knobs: | Vous etes tombé sur le numero: 1",":control_
 });
 
 
-bot.on('message',message => {
-	if (message.content === "/salut")
-message.channel.send(":wave: | Bonjour, " + message.author.username, {
- tts: true
-})
-});
-
 bot.on("message", msg => {
   if (msg.content.startsWith('/status')) {
     if (msg.author.id !== "316993284566417418") {
@@ -95,7 +88,11 @@ bot.on("message", message => {
 		.addField("/8ball","Répond aléatoirement a une question.")
 		.addField("/pp","Vous donne votre photo de profil.")
 	    	.addField("/piece","Lance la pièce : pile ou face ?")
-	    	.addField("/cat","Vous montre une image de chat.")
+	    	.addField("/cat : EN DEV","Vous montre une image de chat.")
+	    	.addField("/dog : EN DEV","Vous montre une image de chien.")
+	    	.addField("/bvn","Souhaitez la bienvenue a une personne.")
+	    	.addField("/salut","Faites un petit coucou a quelqu'un.")
+	    	.addField("/say","Fait parler le bot")
 	    	.addField("/stats : PANNE","Donne les statistiques du bot.")
 	    	.addField("/si : PANNE","Vous montre les informations du serveur.")
 	    	.addField("Bienvenue","Elle est automatique et envoie un message de bienvenue en messages privés au nouvel arrivant.")
@@ -181,5 +178,12 @@ bot.on('message', message => {
    }
 });
 
+
+bot.on('message', message => {
+   if (message.content.startsWith("/salut")) {
+      message.delete(1000);
+      message.channel.send(":wave: | **" + message.author.username + "** vous fait un coucou !");
+   }
+});
 
 bot.login(process.env.TOKEN)
