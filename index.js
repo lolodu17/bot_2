@@ -93,6 +93,7 @@ bot.on("message", message => {
 	    	.addField("/bvn","Souhaitez la bienvenue a une personne.")
 	    	.addField("/salut","Faites un petit coucou a quelqu'un.")
 	    	.addField("/say","Fait parler le bot")
+	    	.addField("/toto","Raconte une blague de toto.")
 	    	.addField("/stats : PANNE","Donne les statistiques du bot.")
 	    	.addField("/si : PANNE","Vous montre les informations du serveur.")
 	    	.addField("Bienvenue","Elle est automatique et envoie un message de bienvenue en messages privés au nouvel arrivant.")
@@ -179,6 +180,12 @@ bot.on('message', message => {
    }
 });
 
+bot.on('message', message => {
+   if (message.content.startsWith("/toto")) {
+var commande = ["🤣 | Toto fais 25x le tour de la cour, Pourquoi ? sǝpnʇé sǝs ʇınsɹnod ʃı ɹɐɔ","🤣 | Toto fais que sauter, sa maman lui demande pourquoi, il répond : J'ai bu du sirop ce matin, mais j'ai oublié de secouer la bouteille."]
+     message.channel.send(`${(commande[Math.floor(Math.random() * commande.length)])}`)
+}
+})
 
 bot.on('message', message => {
    if (message.content.startsWith("/salut")) {
