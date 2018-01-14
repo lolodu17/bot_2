@@ -99,6 +99,7 @@ bot.on("message", message => {
 	    	.addField("Musiques","Fonctionne par mix de 20mn. /radio 1,2,3,4... Il y aura 10 mixs.")
 	    	.addField("Niveaux","Vous donne des points quand vous parlez obtiendrez vous le meilleur niveau ? Regardez vos statistiques avec /level.")
 	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
+	    	.setThumbnail("https://cdn.discordapp.com/avatars/400376181876195329/742ec0b8cc471f78184130d508d946f9.png?size=2048")
 	    	
 
             message.channel.send({embed})
