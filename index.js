@@ -70,7 +70,6 @@ bot.on("message", message => {
 	    	.addField("/oinvite","Vous donne le lien d'invitation."
 		.addField("/pinvite","Si vous ne parvenez pas a cliquer sur le lien de la commande ci-dessus, utilisez celle-ci en dernier recours !")
 	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
-	    	.setThumbnail("http://r78.cooltext.com/rendered/cooltext272523707024529.png")
 	    	
 
             message.channel.send({embed})
