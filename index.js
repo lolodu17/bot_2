@@ -61,38 +61,8 @@ bot.on("message", msg => {
 });
 
 
-bot.on("message", message => {
-    if (message.content === "/invite") {
-            const embed = new Discord.RichEmbed()
-                .setDescription(":love_letter: | **Commandes d'invitations!**")
-                .setColor(0x9300FF)
-		.addField("Vous souhaitez m'inviter ?","Vous trouverez deux commandes pour m'inviter !")
-	    	.addField("/oinvite","Vous donne le lien d'invitation."
-		.addField("/pinvite","Si vous ne parvenez pas a cliquer sur le lien de la commande ci-dessus, utilisez celle-ci en dernier recours !")
-	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
-	    	
-
-            message.channel.send({embed})
-
-        };
-});
-
-bot.on("message", message => {
-    if (message.content === "/invite") {
-            const embed = new Discord.RichEmbed()
-                .setDescription(":love_letter: | **Invitation!**")
-                .setColor(0x9300FF)
-	    	.addField("Voici le lien.","https://discordapp.com/oauth2/authorize?client_id=400376181876195329&scope=bot&permissions=2146958591"
-	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
-	    	
-
-            message.channel.send({embed})
-
-        };
-});
-
 bot.on('message', message => {
-   if (message.content.startsWith("/pinvite")) {
+   if (message.content.startsWith("/invite")) {
       message.channel.send(":love_letter: | https://discordapp.com/oauth2/authorize?client_id=400376181876195329&scope=bot&permissions=2146958591");
    }
 });
