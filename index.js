@@ -171,7 +171,7 @@ bot.on('message', message => {
 bot.on('message', message => {
    if (message.content.startsWith("/voidverse ")) {
       message.delete(1000);
-      bot.channels.get('402888985799557120').sendMessage(message.content.slice(5, message.content.length));
+      bot.channels.get('402888985799557120').sendMessage(message.author.id, + (message.content.slice(5, message.content.length)));
    }
 });	
 
