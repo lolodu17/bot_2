@@ -168,7 +168,6 @@ bot.on('message', message => {
       message.guild.channels.find("name", 'betaverse').send(message.content.slice(5, message.content.length));
    }
 });	
-});
 
 	
 bot.on('message', message => {
