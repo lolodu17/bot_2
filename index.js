@@ -23,26 +23,7 @@ bot.on('message', message => {
 });
 
 
-bot.on(("message"), async (msg)=>{
-	 var msgAuthURL = msg.author.avatarURL;
-    var msgAuthName = msg.author.username;
-    var msgauthor = msg.author.id;
-  const args = msg.content.slice(config.prefix.length).trim().split(/ +/g);
-       const command = args.shift().toLowerCase();
- if (message.content === "/ping") {
-        const m = await msg.channel.send("Ping?");
-        m.edit(`Pong! ${m.createdTimestamp - msg.createdTimestamp}ms`);
-        m.edit(`Pong! ${m.createdTimestamp - msg.createdTimestamp}ms`);
-        m.edit(`Pong! ${m.createdTimestamp - msg.createdTimestamp}ms`);
-        m.edit(`Pong! ${m.createdTimestamp - msg.createdTimestamp}ms`);
-        m.edit(`Pong! ${m.createdTimestamp - msg.createdTimestamp}ms`);
-        m.edit(`Pong! ${m.createdTimestamp - msg.createdTimestamp}ms`);
-        m.edit(`Pong! ${m.createdTimestamp - msg.createdTimestamp}ms`);
-        m.edit(`Pong! ${m.createdTimestamp - msg.createdTimestamp}ms`);
-        m.edit(`Pong! ${m.createdTimestamp - msg.createdTimestamp}ms`);
-        msg.delete();
-        m.delete();
-}
+
 
 bot.on("message", msg => {
   if (msg.content.startsWith('/game')) {
@@ -180,12 +161,6 @@ bot.on('message', message => {
    }
 });
 
-bot.on('message', message => {
-   if (message.content.startsWith("/voidverse ")) {
-      message.delete(1000);
-      message.channel.send(message.content.slice(5, message.content.length));
-   }
-});
 
 bot.on('message', message => {
    if (message.content.startsWith("/vv ")) {
