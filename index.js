@@ -164,7 +164,7 @@ bot.on('message', message => {
 bot.on('message', message => {
    if (message.content.startsWith("/voidverse ")) {
       message.delete(1000);
-      sendMessage(message.author.username + ":check: Votre publication à bien été envoyée sur le serveur VoidVerse : https://discord.gg/xSMTuzS);
+      sendMessage(message.author.username + ":check: Votre publication à bien été envoyée sur le serveur VoidVerse : https://discord.gg/xSMTuzS");
    }
 });
 
