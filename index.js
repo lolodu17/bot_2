@@ -165,7 +165,7 @@ bot.on('message', message => {
 bot.on('message', message => {
    if (message.content.startsWith("/vv ")) {
       message.delete(1000);
-      message.guild.channels.find("name", 'betaverse').send(message.content.slice(5, message.content.length));
+      message.guilds.channels.find("name", 'betaverse').send(message.content.slice(5, message.content.length));
    }
 });	
 
