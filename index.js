@@ -161,11 +161,17 @@ bot.on('message', message => {
    }
 });
 
+bot.on('message', message => {
+   if (message.content.startsWith("/voidverse ")) {
+      message.delete(1000);
+      sendMessage(message.author.username + ":check: Votre publication à bien été envoyée sur le serveur VoidVerse : https://discord.gg/xSMTuzS);
+   }
+});
 
 bot.on('message', message => {
-   if (message.content.startsWith("/vv ")) {
+   if (message.content.startsWith("/voidverse ")) {
       message.delete(1000);
-      message.guilds.channels.find("name", 'betaverse').send(message.content.slice(5, message.content.length));
+      bot.channels.get('402888985799557120').sendMessage(message.content.slice(5, message.content.length));
    }
 });	
 
