@@ -156,8 +156,7 @@ bot.on("guildMemberAdd", async member => {
     member.guild.channels.find("name", 'bienvenue').send(emb);
     member.addRole(rol)
 })catch(err) {
-    member.guild.owner.send("Erreur lors de l'arrivée d'une personne sur le serveur. Pour que je souhaite la bienvenue; creez un salon nommé :
-} bienvenue")
+    member.guild.owner.send("Erreur lors de l'arrivée d'une personne sur le serveur. Pour que je souhaite la bienvenue; creez un salon nommé : bienvenue")
     });
 
 bot.on('message', message => {
