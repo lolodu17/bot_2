@@ -148,7 +148,6 @@ voiceChannel
 });
 
 bot.on("guildMemberAdd", async member => {
-    try {
     var emb = new Discord.RichEmbed()
             .setColor("730000")
             .setTitle("Arrivée!")
