@@ -154,9 +154,7 @@ bot.on("guildMemberAdd", async member => {
             .setDescription(":wave: | ${member.user.tag} a atterri dans le serveur !")
             .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
     member.guild.channels.find("name", 'bienvenue').send(emb);
-})catch(err) {
-    member.guild.owner.send("Erreur lors de l'arrivée d'une personne sur le serveur. Pour que je souhaite la bienvenue; creez un salon nommé : bienvenue")
-    });
+});
 
 bot.on('message', message => {
    if (message.content.startsWith("/say ")) {
