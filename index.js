@@ -84,7 +84,7 @@ bot.on("message", message => {
 	    	.addField("/salut","Faites un petit coucou a quelqu'un.")
 	    	.addField("/say","Fait parler le bot")
 	    	.addField("/toto","Raconte une blague de toto.")
-	    	.addField("Bienvenue","Elle est automatique et envoie un message de bienvenue en messages privés au nouvel arrivant.")
+	    	.addField("Bienvenue","Creez simplement un salon nommé : bienvenue")
 	    	.addField("Musiques","Fonctionne par mix de 20mn. /radio 1 ou 2 Il y a 2 mixs.")
 	    	.addField("Niveaux","Vous donne des points quand vous parlez obtiendrez vous le meilleur niveau ? Regardez vos statistiques avec /level.")
 	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
@@ -147,12 +147,19 @@ voiceChannel
 };
 });
 
-
-bot.on('guildMemberAdd', member => {
-  member.createDM().then(channel => {
-    return channel.send(":wave: | Je te souhaite la bienvenue sur ce serveur ! Si tu as des questions sur moi utilise la commande : **/help**, tu peux aussi m'ajouter sur ton serveur discord avec la commande **/invite**, " + member.displayName)
-  }).catch(console.error)
-})
+bot.on("guildMemberAdd", async member => {
+    try {
+    var emb = new Discord.RichEmbed()
+            .setColor("730000")
+            .setTitle("Arrivée!")
+            .setDescription(":wave: | ${member.user.tag} a atterri dans le serveur !")
+            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+    member.guild.channels.find("name", 'bienvenue').send(emb);
+    member.addRole(rol)
+}catch(err) {
+    member.guild.owner.send("Erreur lors de l'arrivée d'une personne sur le serveur. Pour que je souhaite la bienvenue; creez un salon nommé :
+} bienvenue")
+    });
 
 bot.on('message', message => {
    if (message.content.startsWith("/say ")) {
