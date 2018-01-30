@@ -222,15 +222,6 @@ bot.on('message', message => {
     });
 
 
-bot.on("guildMemberRemove", async member => {
-    var emb = new Discord.RichEmbed()
-            .setColor("730000")
-            .setTitle("Départ!")
-            .setDescription(`:wave: | ${member.user.tag} a lever le camp !`)
-            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
-    member.guild.channels.find("name", 'bienvenue').send(emb);
-});
-
 
 
 
