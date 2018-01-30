@@ -151,7 +151,7 @@ bot.on("guildMemberAdd", async member => {
     var emb = new Discord.RichEmbed()
             .setColor("730000")
             .setTitle("Arrivée!")
-            .setDescription(":wave: | " + ${member.user.tag} " a atterri dans le serveur !")
+            .setDescription(":wave: | " + member.user.username " a atterri dans le serveur !")
             .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
     member.guild.channels.find("name", 'bienvenue').send(emb);
 });
