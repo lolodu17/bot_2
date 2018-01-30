@@ -177,6 +177,64 @@ bot.on('message', message => {
    }
 });	
 
+
+
+
+ bot.on("roleCreate", role =>{
+        try {
+        var emb = new Discord.RichEmbed()
+        .setColor("730000")
+        .setTitle("Création de role!")
+        .setDescription(`Un role à été crée sur : ${role.guild.name}.`)
+        .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+        role.guild.channels.find("name", 'logs').send(emb)
+	});
+
+ bot.on("roleDelete", role =>{
+        try {
+        var emb = new Discord.RichEmbed()
+        .setColor("730000")
+        .setTitle("Suppression de role!")
+        .setDescription(`Le role ${role.name} à été supprimé du serveur : ${role.guild.name}`)
+        .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+    role.guild.channels.find("name", 'logs').send(emb)
+    });
+	 
+	 
+ bot.on("emojiCreate", emoji =>{
+        try {
+        var emb = new Discord.RichEmbed()
+            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+            .setColor("730000")
+            .setTitle("Création d'émoji!")
+            .setDescription(`L'émoji ${emoji.name} à été crée sur : ${emoji.guild.name}`)
+        emoji.guild.channels.find("name", 'logs').send(emb)
+    });
+    
+ bot.on("emojiDelete", emoji =>{
+        try {
+        var emb = new Discord.RichEmbed()
+            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+            .setColor("730000")
+            .setTitle("Suppression d'émoji!")
+            .setDescription(`L'emoji ${emoji.name} à été supprimé du serveur : ${emoji.guild.name}`)
+        emoji.guild.channels.find("name", 'logs').send(emb)
+    });
+
+
+bot.on("guildMemberRemove", async member => {
+    var emb = new Discord.RichEmbed()
+            .setColor("730000")
+            .setTitle("Départ!")
+            .setDescription(`:wave: | ${member.user.tag} a lever le camp !`)
+            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+    member.guild.channels.find("name", 'bienvenue').send(emb);
+});
+
+
+
+
+
 	
 bot.on('message', message => {
    if (message.content.startsWith("/bvn")) {
