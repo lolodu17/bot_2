@@ -188,7 +188,10 @@ bot.on('message', message => {
         .setDescription(`Un role à été crée sur : ${role.guild.name}.`)
         .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
         role.guild.channels.find("name", 'logs').send(emb)
-	});
+	     } catch(err) {
+            role.guild.owner.send(".")
+        }
+    })
 
  bot.on("roleDelete", role =>{
         try {
@@ -198,7 +201,10 @@ bot.on('message', message => {
         .setDescription(`Le role ${role.name} à été supprimé du serveur : ${role.guild.name}`)
         .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
     role.guild.channels.find("name", 'logs').send(emb)
-    });
+         } catch(err) {
+            role.guild.owner.send(".")
+        }
+    })
 	 
 	 
  bot.on("emojiCreate", emoji =>{
@@ -209,6 +215,9 @@ bot.on('message', message => {
             .setTitle("Création d'émoji!")
             .setDescription(`L'émoji ${emoji.name} à été crée sur : ${emoji.guild.name}`)
         emoji.guild.channels.find("name", 'logs').send(emb)
+		  } catch(err) {
+            emoji.guild.owner.send(".")
+        }
     });
     
  bot.on("emojiDelete", emoji =>{
@@ -219,7 +228,10 @@ bot.on('message', message => {
             .setTitle("Suppression d'émoji!")
             .setDescription(`L'emoji ${emoji.name} à été supprimé du serveur : ${emoji.guild.name}`)
         emoji.guild.channels.find("name", 'logs').send(emb)
-    });
+      } catch(err) {
+            emoji.guild.owner.send(".")
+        }
+    })
 
 
 
