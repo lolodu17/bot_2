@@ -87,7 +87,7 @@ bot.on("message", message => {
 	    	.addField("Bienvenue","Creez simplement un salon nommé : bienvenue")
 	    	.addField("Musiques","Fonctionne par mix de 20mn. /radio 1 ou 2 Il y a 2 mixs.")
 	    	.addField("Niveaux","Vous donne des points quand vous parlez obtiendrez vous le meilleur niveau ? Regardez vos statistiques avec /level.")
-	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.")
+	    	.setFooter("TheVoid codé par BeedyWool avec l'aide de Liquideur de kids, hébergé par Heroku.")
 	    	.setThumbnail("https://cdn.discordapp.com/avatars/400376181876195329/742ec0b8cc471f78184130d508d946f9.png?size=2048")
 	    	
 
@@ -152,7 +152,7 @@ bot.on("guildMemberAdd", async member => {
             .setColor("730000")
             .setTitle("Arrivée!")
             .setDescription(`:wave: | ${member.user.tag} a atterri dans le serveur !`)
-            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Liquideur de kids, hébergé par Heroku.`, bot.user.avatarURL)
     member.guild.channels.find("name", 'bienvenue').send(emb);
 });
 
@@ -186,7 +186,7 @@ bot.on('message', message => {
         .setColor("730000")
         .setTitle("Création de role!")
         .setDescription(`Un role à été crée sur : ${role.guild.name}.`)
-        .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+        .setFooter(`TheVoid codé par BeedyWool avec l'aide de Liquideur de kids, hébergé par Heroku.`, bot.user.avatarURL)
         role.guild.channels.find("name", 'logs').send(emb)
 	     } catch(err) {
             role.guild.owner.send(".")
@@ -223,7 +223,7 @@ bot.on('message', message => {
  bot.on("emojiDelete", emoji =>{
         try {
         var emb = new Discord.RichEmbed()
-            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Splating, hébergé par Heroku.`, bot.user.avatarURL)
+            .setFooter(`TheVoid codé par BeedyWool avec l'aide de Liquideur de kids, hébergé par Heroku.`, bot.user.avatarURL)
             .setColor("730000")
             .setTitle("Suppression d'émoji!")
             .setDescription(`L'emoji ${emoji.name} à été supprimé du serveur : ${emoji.guild.name}`)
